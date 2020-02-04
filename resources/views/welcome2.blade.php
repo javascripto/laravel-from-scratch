@@ -8,6 +8,7 @@
 </head>
 <body>
     <a href="/about">About</a>
+    <a href="/tasks">Tasks</a>
     <h1><?= $title; ?></h1>
     <h2><?= $subtitle; ?></h2>
     <a href="<?= $link ?>"><?= $video; ?></a>
@@ -22,8 +23,7 @@
         @else
             {{ $w_video }}
         @endif
-        </li>
-            
+        </li>  
     @endforeach
     </ul>
 

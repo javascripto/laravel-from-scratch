@@ -20,7 +20,8 @@ Route::get('/', function () {
         'Basic Routing and Views',
         'Laravel Valet is Your Best Friend',
         'Database Setup and Sequel Pro',
-        'Pass Data to Your Views'
+        'Pass Data to Your Views',
+        'Working With the Query Builder',
     ];
 
     return view('welcome2', [
@@ -33,4 +34,14 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
     return view('about');
+});
+
+Route::get('/tasks', function() {
+    $tasks = DB::table('tasks')->get();
+    return view('tasks.index')->with(compact('tasks'));
+});
+
+Route::get('/tasks/{id}', function(int $id) {
+    $task = DB::table('tasks')->find($id);
+    return view('tasks.show')->with(compact('task'));
 });
