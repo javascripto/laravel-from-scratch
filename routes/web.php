@@ -11,6 +11,8 @@
 |
 */
 
+use App\Task;
+
 Route::get('/', function () {
     $video = 'Pass Data to Your Views';
     $link = 'https://laracasts.com/series/laravel-from-scratch-2017/episodes/5';
@@ -37,11 +39,16 @@ Route::get('/about', function () {
 });
 
 Route::get('/tasks', function() {
-    $tasks = DB::table('tasks')->get();
+    // $tasks = DB::table('tasks')->get();
+    $tasks = Task::all();
+    // $tasks = Task::incompleted(); // custom static metod with query
+    // $tasks = Task::completed(false)->get(); // query scope
     return view('tasks.index')->with(compact('tasks'));
 });
 
-Route::get('/tasks/{id}', function(int $id) {
-    $task = DB::table('tasks')->find($id);
+Route::get('/tasks/{task}', function(Task $task) {
+// Route::get('/tasks/{id}', function(int $id) {
+    // $task = DB::table('tasks')->find($id);
+    // $task = Task::find($id);
     return view('tasks.show')->with(compact('task'));
 });
