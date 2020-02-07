@@ -13,3 +13,13 @@ ports:
     onOpen: open-preview
   - port: 3306
     onOpen: ignore
+
+vscode:
+  extensions:
+    - onecentlin.laravel-blade@1.20.0:cRpyKxGh7po7Nes2YsNVLg==
+    - amiralizadeh9480.laravel-extra-intellisense@0.2.5:8DRUtuQvfr3UjYNzv6mVAg==
+    - felixfbecker.php-pack@1.0.2:2tC7WotsullzqmSDq/Jf8A==
+    - MehediDracula.php-namespace-resolver@1.1.8:x28iiki52xC+Aj6umFguHA==
+    - felixfbecker.php-intellisense@2.3.14:3tN5FICV5G1FtmHuI0yDWw==
+    - ikappas.phpcs@1.0.5:w+a39tltTRRhaHPX+vyxng==
+    - marabesi.php-import-checker@0.4.0:D5AipYN0PBKfcNUE3yDkgQ==
