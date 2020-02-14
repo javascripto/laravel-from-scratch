@@ -73,3 +73,8 @@
         return view('tasks.show')->with(compact('task'));
     });
     ```
+
+- Controllers
+    - Command to create a controller: `php artisan make:controller TasksController`
+    - Controllers path: `app/Http/Controllers`
+    - Main methods: `index`, `show`, `store`, `update`, `delete`
