@@ -78,3 +78,24 @@
     - Command to create a controller: `php artisan make:controller TasksController`
     - Controllers path: `app/Http/Controllers`
     - Main methods: `index`, `show`, `store`, `update`, `delete`
+   ```php
+   <?php
+    namespace App\Http\Controllers;
+
+    use App\Task;
+    use Illuminate\Http\Request;
+
+    class TasksController extends Controller
+    {
+        public function index(Request $request)
+        {
+            $tasks = Task::all();
+            return view('tasks.index', compact('tasks'));
+        }
+
+        public function show(Task $task)
+        {
+            return view('tasks.show')->with(compact('task'));
+        }
+    }
+```
