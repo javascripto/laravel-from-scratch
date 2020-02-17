@@ -31,6 +31,8 @@ Route::get('/tasks/{task}', 'TasksController@show');
 
 
 // Layouts and structure
+Route::get('/posts', 'PostsController@index');
+Route::get('/posts/{post}', 'PostsController@show');
 
 // Eloquent model => Post
 // controller => PostsController

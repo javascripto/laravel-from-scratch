@@ -9,6 +9,9 @@
 <body>
     <a href="/about">About</a>
     <a href="/tasks">Tasks</a>
+    <a href="/posts">Posts</a>
+
+
     <h1><?= $title; ?></h1>
     <h2><?= $subtitle; ?></h2>
     <a href="<?= $link ?>"><?= $video; ?></a>
