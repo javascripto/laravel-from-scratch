@@ -28,3 +28,17 @@ Route::get('/about', function () {
 
 Route::get('/tasks', 'TasksController@index');
 Route::get('/tasks/{task}', 'TasksController@show');
+
+
+// Layouts and structure
+
+// Eloquent model => Post
+// controller => PostsController
+// migration => create_posts_table
+
+// php artisna make:model Post
+// php artisna make:controller PostsController
+// php artisan make:migration create_posts_table --create=posts
+
+// php artisna make:model Post -mc
+// php artisan migrate
