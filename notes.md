@@ -75,27 +75,48 @@
     ```
 
 - Controllers
-    - Command to create a controller: `php artisan make:controller TasksController`
-    - Controllers path: `app/Http/Controllers`
-    - Main methods: `index`, `show`, `store`, `update`, `delete`
+    - Comando para criar um controller: `php artisan make:controller TasksController`
+    - Diretório para Controllers: `app/Http/Controllers`
+    - Principais métodos de um controller: `index`, `show`, `store`, `update`, `delete`
    ```php
-   <?php
-    namespace App\Http\Controllers;
+    <?php
+        namespace App\Http\Controllers;
 
-    use App\Task;
-    use Illuminate\Http\Request;
+        use App\Task;
+        use Illuminate\Http\Request;
 
-    class TasksController extends Controller
-    {
-        public function index(Request $request)
+        class TasksController extends Controller
         {
-            $tasks = Task::all();
-            return view('tasks.index', compact('tasks'));
-        }
+            public function index(Request $request)
+            {
+                $tasks = Task::all();
+                return view('tasks.index', compact('tasks'));
+            }
 
-        public function show(Task $task)
-        {
-            return view('tasks.show')->with(compact('task'));
+            public function show(Task $task)
+            {
+                return view('tasks.show')->with(compact('task'));
+            }
         }
-    }
-```
+    ```
+
+- Templates Blade
+    - Criando um Model com migration e controller: `php artisan make:model Post -mc`
+    - Criando um layout mestre para herdar em outro arquivo e incluir partes de layouts. (yield, extends, section, include)
+        ```php
+            <!-- layouts/master.blade.php -->
+            <h1>Template Master</h1>
+            <div>
+                @yield ('content')
+            </div>
+        ```
+        ```php
+            <!-- page.blade.php -->
+            @extends ('layouts.master')
+
+            @section ('content')
+                Here goes the content
+            @endsection
+
+            @include('layouts.footer')
+        ```
